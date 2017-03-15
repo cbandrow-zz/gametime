@@ -44,26 +44,81 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// var World =  require("./world.js")
-	// var world = new World(canvas.width, canvas.height)
-	// world.draw(ctx);
-	var Ball = __webpack_require__(1);
+	var World = __webpack_require__(1);
+	var Ball = __webpack_require__(3);
+	var Brick = __webpack_require__(4);
 	var Paddle = __webpack_require__(2);
 	var canvas = document.getElementById('game');
 	var ctx = canvas.getContext('2d');
 	var ball = new Ball();
+	var brick = new Brick();
 	var paddle = new Paddle(250, 450, "blue");
+	var world = new World(canvas.width, canvas.height);
 
 	requestAnimationFrame(function gameLoop() {
 
-	  ctx.clearRect(0, 0, canvas.width, canvas.height);
+	  // ctx.clearRect(0, 0, canvas.width, canvas.height);
+	  world.draw(ctx);
 	  paddle.draw(ctx);
 	  ball.draw(ctx);
+	  brick.draw(ctx);
 	  requestAnimationFrame(gameLoop);
 	});
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Paddle = __webpack_require__(2);
+
+	function World(width, height) {
+	  this.width = width;
+	  this.height = height;
+	}
+
+	World.prototype.draw = function (ctx) {
+	  ctx.fillStyle = "green";
+	  ctx.fillRect(0, 0, this.width, this.height);
+	  return this;
+	};
+
+	requestAnimationFrame(function gameLoop(ctx, canvas) {
+	  ctx.clearRect(0, 0, canvas.width, canvas.height);
+	  var paddle = new Paddle(250, 250);
+	  // canvas.addEventListener('mousemove', function (e) {
+	  // console.log('x: ', e.offsetX);
+	  // var x = e.offsetX;
+	  // var newBlock = new Paddle(x, y, 20, 5, "rgba(0, 55, 150, 1)");
+	  // blocks.push(newBlock);
+	  // });
+
+	  requestAnimationFrame(gameLoop);
+	});
+
+	module.exports = World;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	function Paddle(x, y, color) {
+	  this.x = x;
+	  this.y = 450;
+	  this.width = 40;
+	  this.height = 15;
+	  this.color = color;
+	}
+
+	Paddle.prototype.draw = function (ctx) {
+	  ctx.fillStyle = this.color;
+	  ctx.fillRect(250, 450, this.width, this.height);
+	  return this;
+	};
+
+	module.exports = Paddle;
+
+/***/ },
+/* 3 */
 /***/ function(module, exports) {
 
 	function Ball() {
@@ -98,24 +153,28 @@
 	module.exports = Ball;
 
 /***/ },
-/* 2 */
+/* 4 */
 /***/ function(module, exports) {
 
-	function Paddle(x, y, color) {
-	  this.x = x;
-	  this.y = 450;
-	  this.width = 40;
-	  this.height = 15;
-	  this.color = color;
+	function Brick() {
+	    this.width = 40;
+	    this.height = 15;
+	    this.color = "yellow";
+	    this.block = [];
+	    for (let x = 0; x < 3; x++) {
+	        block[x] = [];
+	        for (let y = 0; y < 2; y++) {
+	            block[x][y] = { x: 0, y: 0 };
+	        }
+	    }
 	}
 
-	Paddle.prototype.draw = function (ctx) {
-	  ctx.fillStyle = this.color;
-	  ctx.fillRect(250, 450, this.width, this.height);
-	  return this;
+	Brick.prototype.draw = function (ctx) {
+	    ctx.fillStyle = this.color;
+	    ctx.fillRect(250, 50, this.width, this.height);
+	    return this;
 	};
-
-	module.exports = Paddle;
+	module.exports = Brick;
 
 /***/ }
 /******/ ]);
