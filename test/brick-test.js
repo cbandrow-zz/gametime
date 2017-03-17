@@ -1,3 +1,4 @@
+require("locus");
 const assert = require('chai').assert
 const World = require('../lib/world.js')
 const Brick = require('../lib/brick.js')
@@ -24,22 +25,21 @@ describe('brick', () => {
 
 
   it('should have a width', () =>{
-  var brick = new Brick({})
+  var brick = new Brick({width:50})
 
   assert.deepEqual(brick.width, 50);
   })
 
   it('should have a height', () =>{
-  var brick = new Brick({})
+  var brick = new Brick({height:15})
 
   assert.deepEqual(brick.height, 15);
   })
 
-
-  
-
-
-
-
+  it('should be part of an array of bricks', () =>{
+    let world = new World(50, 50);
+    eval(locus);
+    assert.equal(Array.isArray(world.brick), true)
+  })
 
 })
