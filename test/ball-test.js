@@ -64,4 +64,16 @@ describe('balls attributes', () => {
     assert.equal(world.ball.yy, 3);
   })
 
+  it("it should make a bricks value changes to true",()=>{
+    var world = new World(500, 500);
+
+    world.ball.x = 200;
+    world.ball.y = 110;
+    // eval(locus)
+    assert.equal(world.brick[11].hit, false)
+    world.brickHitMid();
+    assert.equal(world.brick[11].hit, true)
+  })
+
+
 })
