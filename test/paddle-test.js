@@ -49,6 +49,14 @@ describe("Paddle should move and interact",()=>{
     assert.equal(world.paddle.x, 50)
   })
 
+})
+
+describe("It should interact with the ball",()=>{
+  const world = new World()
+  it("should change the balls path",()=>{
+
+  })
+
 
 
 

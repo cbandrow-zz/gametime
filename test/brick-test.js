@@ -40,8 +40,19 @@ describe('Bricks attributes' ,() => {
 
   it('should be part of an array of bricks', () =>{
     let world = new World(50, 50);
-    // eval(locus);
     assert.equal(Array.isArray(world.brick), true)
+  })
+
+  it('There should be 24 bricks orginally', () =>{
+    let world = new World(50, 50);
+    assert.equal(world.brick.length,24 )
+  })
+
+  it('bricks should have a hit value of false', () =>{
+    let world = new World(50, 50);
+    for(let i= 0; i<world.brick.length;i++){
+    assert.equal(world.brick[i].hit,false)
+  }
   })
 
 })
