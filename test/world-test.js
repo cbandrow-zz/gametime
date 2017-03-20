@@ -2,8 +2,9 @@ require("locus");
 const assert = require('chai').assert
 const World = require('../lib/world.js')
 const Brick = require('../lib/brick.js')
+const Paddle = require('../lib/paddle.js')
 
-describe('There should be a main world object which holds the other objects.', () => {
+describe('World object should hold bricks, balls, and paddles.', () => {
 
   it('there should be a world', () =>{
     var world = new World();
@@ -42,10 +43,10 @@ describe('There should be a main world object which holds the other objects.', (
     assert.equal(Array.isArray(world.brick), true)
   })
 
-  it('should have a level up state', () =>{
+  it.only('should have a level up state', () =>{
     var world = new World(500, 500);
     assert.equal(Array.isArray(world.brick), true)
-    // eval(locus);
+    eval(locus);
     world.brick.forEach(function(i){
       i.hit = true;
     })

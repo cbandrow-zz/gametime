@@ -3,8 +3,9 @@ require("locus");
 const assert = require('chai').assert
 const World = require('../lib/world.js')
 const Ball = require('../lib/ball.js')
+const Paddle = require('../lib/paddle.js')
 
-describe('ball', () => {
+describe('balls attributes', () => {
 
   it('there should be a ball', () =>{
     var ball = new Ball({})
