@@ -38,10 +38,10 @@ describe('Brick should be an object. It should have a width and height, but also
 
   it('should be part of an array of bricks', () =>{
     let world = new World(50, 50);
-    eval(locus);
+    // eval(locus);
     assert.equal(Array.isArray(world.brick), true)
   })
-  
+
 
 
 
