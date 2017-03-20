@@ -5,7 +5,7 @@ const Brick = require('../lib/brick.js')
 const Paddle = require('../lib/paddle.js')
 
 
-describe('Bricks attributes' () => {
+describe('Bricks attributes' ,() => {
 
   it('there should be a brick', () =>{
     var brick = new Brick({})

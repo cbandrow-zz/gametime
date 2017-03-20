@@ -43,10 +43,10 @@ describe('World object should hold bricks, balls, and paddles.', () => {
     assert.equal(Array.isArray(world.brick), true)
   })
 
-  it.only('should have a level up state', () =>{
+  it('should have a level up state', () =>{
     var world = new World(500, 500);
     assert.equal(Array.isArray(world.brick), true)
-    eval(locus);
+    // eval(locus);
     world.brick.forEach(function(i){
       i.hit = true;
     })
