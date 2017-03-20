@@ -3,7 +3,7 @@ const assert = require('chai').assert
 const World = require('../lib/world.js')
 const Brick = require('../lib/brick.js')
 
-describe('brick', () => {
+describe('Brick should be an object. It should have a width and height, but also an X and Y value. It should exist within an array.', () => {
 
   it('there should be a brick', () =>{
   var brick = new Brick({})
@@ -41,5 +41,8 @@ describe('brick', () => {
     eval(locus);
     assert.equal(Array.isArray(world.brick), true)
   })
+  
+
+
 
 })
