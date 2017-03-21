@@ -1,22 +1,29 @@
 
 body{
-  background-color:lightyellow;
+  background-color:lightgrey;
 }
 
 .game-title{
+  font-weight: 100;
   text-align: center;
-
 }
 
 #game{
   display: block;
   margin: 0px auto;
   border:1px black solid;
+  background-color: #000
 }
 
 .game-menu{
   display: flex;
-  margin: 25px 33%;
+  margin: 25px auto;
   width: 340px;
-justify-content: space-between;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+#play-btn{
+  border-radius:20%;
+  outline:none;
 }
