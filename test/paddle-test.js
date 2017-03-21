@@ -10,28 +10,24 @@ const paddle = new Paddle({x:15,y:200,width:15,height:10})
 
 it("should have a width of 15",()=>{
   assert.equal(paddle.width,15)
-})
+  })
 
 it("should have a height of 10",()=>{
   assert.equal(paddle.height,10)
-
-})
+  })
 
 it("should have a x value of 15",()=>{
   assert.equal(paddle.x,15)
-
-})
+  })
 
 it("should have a y value of 200",()=>{
   assert.equal(paddle.y,200)
-})
+  })
 
 })
-
 
 describe("Paddle should move and interact",()=>{
   const world = new World()
-
   it("Should start at this location",()=>{
     assert.equal(world.paddle.x, 212)
     assert.equal(world.paddle.y,450)
@@ -48,16 +44,5 @@ describe("Paddle should move and interact",()=>{
     world.paddle.move(50)
     assert.equal(world.paddle.x, 50)
   })
-
-})
-
-describe("It should interact with the ball",()=>{
-  const world = new World()
-  it("should change the balls path",()=>{
-
-  })
-
-
-
 
 })
