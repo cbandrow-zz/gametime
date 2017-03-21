@@ -28,8 +28,8 @@ describe('balls attributes', () => {
   })
 
   it('it should have a default velocity', () =>{
-    assert.equal(world.ball.xx, 3);
-    assert.equal(world.ball.yy, -3);
+    assert.equal(world.ball.xx, 0);
+    assert.equal(world.ball.yy, 0);
   })
 
 })
@@ -88,7 +88,7 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
   })
 
   it.skip("it should follow the paddle upon game launch and ball", ()=>{
-
+    
   })
 
   it.skip("it should launch off the paddle when hitting enter", ()=>{
