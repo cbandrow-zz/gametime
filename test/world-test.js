@@ -1,8 +1,6 @@
 require("locus");
 const assert = require('chai').assert
 const World = require('../lib/world.js')
-const Brick = require('../lib/brick.js')
-const Paddle = require('../lib/paddle.js')
 
 describe('World object should hold bricks, balls, and paddles.', () => {
   var world = new World(500, 500);

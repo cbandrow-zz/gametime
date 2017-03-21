@@ -3,8 +3,6 @@ require("locus");
 const assert = require('chai').assert
 const World = require('../lib/world.js')
 const Ball = require('../lib/ball.js')
-const Brick = require('../lib/brick.js')
-const Paddle = require('../lib/paddle.js')
 
 describe('balls attributes', () => {
   var ball = new Ball({})
@@ -36,7 +34,6 @@ describe('balls attributes', () => {
 
 describe('Ball should behave and cooperate with the rest of the world.', () => {
 
-  var ball = new Ball({})
   var world = new World(500, 500);
 
   it('it should collide with the center of the platform', () =>{
@@ -68,7 +65,7 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
     assert.equal(world.ball.yy, 3);
   })
 
-  it("it should make a bricks value changes to true",()=>{
+  it("it should make a bricks value changes to true", ()=>{
     world.ball.x = 375;
     world.ball.y = 80;
     assert.equal(world.brick[14].hit, false)
@@ -94,19 +91,19 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
     world.ball.xx = 0
     world.ball.yy = 0
     world.prepareLaunch()
-    assert.equal(world.ball.x,world.paddle.x+40)
-    assert.equal(world.ball.y,world.paddle.y-5)
+    assert.equal(world.ball.x, world.paddle.x+40)
+    assert.equal(world.ball.y, world.paddle.y-5)
     world.paddle.x = 100
     world.prepareLaunch()
-    assert.equal(world.ball.x,world.paddle.x+40)
-    assert.equal(world.ball.y,world.paddle.y-5)
+    assert.equal(world.ball.x, world.paddle.x+40)
+    assert.equal(world.ball.y, world.paddle.y-5)
 
 
   })
 
   it("it should launch off the paddle when hitting enter", ()=>{
-    assert.equal(world.ball.xx,0)
-    assert.equal(world.ball.yy,0)
+    assert.equal(world.ball.xx, 0)
+    assert.equal(world.ball.yy, 0)
 
 
   })

@@ -1,17 +1,22 @@
 
 body{
   background-color:lightgrey;
+  background-image: url('images/Defy_Gravity_Background_Space_4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .game-title{
   font-weight: 100;
   text-align: center;
+  color:#fff;
+  font-family: fantasy;
 }
 
 #game{
   display: block;
   margin: 0px auto;
-  border:1px black solid;
+  border:1px white solid;
   background-color: #000
 }
 
@@ -21,9 +26,13 @@ body{
   width: 340px;
   justify-content: space-between;
   font-weight: bold;
+  font-family: fantasy;
+  color:#fff
 }
 
 #play-btn{
   border-radius:20%;
   outline:none;
+  background-color: purple;
+  color: white;
 }

@@ -2,11 +2,9 @@ require("locus");
 const assert = require('chai').assert
 const World = require('../lib/world.js')
 const Brick = require('../lib/brick.js')
-const Paddle = require('../lib/paddle.js')
 
-
-describe('Bricks attributes' ,() => {
-  let brick = new Brick({x:50,y:15,width:50,height:15})
+describe('Bricks attributes', () => {
+  let brick = new Brick({x: 50, y: 15, width: 50, height: 15})
   let world = new World(50, 50);
 
   it('there should be a brick', () =>{
@@ -36,13 +34,13 @@ describe('Bricks attributes' ,() => {
   })
 
   it('There should be 24 bricks orginally', () =>{
-    assert.equal(world.brick.length,24 )
+    assert.equal(world.brick.length, 24 )
   })
 
   it('bricks should have a hit value of false', () =>{
-    for(let i= 0; i<world.brick.length;i++){
-    assert.equal(world.brick[i].hit,false)
-  }
+    for (let i= 0; i<world.brick.length;i++) {
+      assert.equal(world.brick[i].hit, false)
+    }
   })
 
 })
