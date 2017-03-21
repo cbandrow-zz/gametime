@@ -3,6 +3,7 @@ require("locus");
 const assert = require('chai').assert
 const World = require('../lib/world.js')
 const Ball = require('../lib/ball.js')
+const Brick = require('../lib/brick.js')
 const Paddle = require('../lib/paddle.js')
 
 describe('balls attributes', () => {
@@ -30,6 +31,13 @@ describe('balls attributes', () => {
     assert.equal(world.ball.xx, 3);
     assert.equal(world.ball.yy, -3);
   })
+
+})
+
+describe('Ball should behave and cooperate with the rest of the world.', () => {
+
+  var ball = new Ball({})
+  var world = new World(500, 500);
 
   it('it should collide with the center of the platform', () =>{
     world.ball.x = 254;
@@ -59,7 +67,6 @@ describe('balls attributes', () => {
   })
 
   it("it should make a bricks value changes to true",()=>{
-
     world.ball.x = 200;
     world.ball.y = 110;
     assert.equal(world.brick[11].hit, false)
@@ -67,5 +74,25 @@ describe('balls attributes', () => {
     assert.equal(world.brick[11].hit, true)
   })
 
+  it("it should increase speed as score increases", ()=>{
+    world.increaseSpeed();
+    assert.equal(world.ball.xx, 3.24)
+    assert.equal(world.ball.xx, 3.24);
+  })
+
+  it("it should reset speed if new level state occurs", ()=>{
+    world.brick.forEach(i=>i.hit = true)
+    world.levelUp();
+    assert.equal(world.level, 1);
+    assert.equal(world.ball.xx, 0);
+  })
+
+  it.skip("it should follow the paddle upon game launch and ball", ()=>{
+
+  })
+
+  it.skip("it should launch off the paddle when hitting enter", ()=>{
+
+  })
 
 })
