@@ -42,6 +42,7 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
   it('it should collide with the center of the platform', () =>{
     world.ball.x = 254;
     world.ball.y = 452;
+    world.ball.yy=-3
     assert.equal(world.ball.x, 254);
     world.bounceMiddle();
     assert.equal(world.ball.yy, 3);
@@ -50,6 +51,7 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
   it('it should collide with the Left of the platform', () =>{
     world.ball.x = 215;
     world.ball.y = 452;
+    world.ball.xx = 3
     assert.equal(world.ball.x, 215);
     assert.equal(world.ball.yy, 3);
     world.bounceLeft();
@@ -67,17 +69,18 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
   })
 
   it("it should make a bricks value changes to true",()=>{
-    world.ball.x = 200;
-    world.ball.y = 110;
-    assert.equal(world.brick[11].hit, false)
+    world.ball.x = 375;
+    world.ball.y = 80;
+    assert.equal(world.brick[14].hit, false)
     world.brickHitMid();
-    assert.equal(world.brick[11].hit, true)
+    assert.equal(world.brick[14].hit, true)
   })
 
   it("it should increase speed as score increases", ()=>{
+    assert.equal(world.ball.xx, 3);
+    world.score = 60
     world.increaseSpeed();
     assert.equal(world.ball.xx, 3.24)
-    assert.equal(world.ball.xx, 3.24);
   })
 
   it("it should reset speed if new level state occurs", ()=>{
@@ -87,11 +90,24 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
     assert.equal(world.ball.xx, 0);
   })
 
-  it.skip("it should follow the paddle upon game launch and ball", ()=>{
-    
+  it("it should follow the paddle upon game launch and ball", ()=>{
+    world.ball.xx = 0
+    world.ball.yy = 0
+    world.prepareLaunch()
+    assert.equal(world.ball.x,world.paddle.x+40)
+    assert.equal(world.ball.y,world.paddle.y-5)
+    world.paddle.x = 100
+    world.prepareLaunch()
+    assert.equal(world.ball.x,world.paddle.x+40)
+    assert.equal(world.ball.y,world.paddle.y-5)
+
+
   })
 
-  it.skip("it should launch off the paddle when hitting enter", ()=>{
+  it("it should launch off the paddle when hitting enter", ()=>{
+    assert.equal(world.ball.xx,0)
+    assert.equal(world.ball.yy,0)
+
 
   })
 
