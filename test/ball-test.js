@@ -65,12 +65,12 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
     assert.equal(world.ball.yy, 3);
   })
 
-  it("it should make a bricks value changes to true", ()=>{
+  it("it should make a bricks hit value change", ()=>{
     world.ball.x = 375;
     world.ball.y = 80;
-    assert.equal(world.brick[14].hit, false)
+    assert.equal(world.brick[14].hits, 1)
     world.brickHitMid();
-    assert.equal(world.brick[14].hit, true)
+    assert.equal(world.brick[14].hits, 0)
   })
 
   it("it should increase speed as score increases", ()=>{
@@ -81,9 +81,9 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
   })
 
   it("it should reset speed if new level state occurs", ()=>{
-    world.brick.forEach(i=>i.hit = true)
+    world.brick.forEach(i=>i.hits = 0)
     world.levelUp();
-    assert.equal(world.level, 1);
+    assert.equal(world.level, 2);
     assert.equal(world.ball.xx, 0);
   })
 
