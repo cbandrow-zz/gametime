@@ -33,14 +33,22 @@ describe('Bricks attributes', () => {
     assert.equal(Array.isArray(world.brick), true)
   })
 
-  it('There should be 24 bricks orginally', () =>{
+  it(' should have 24 bricks orginally', () =>{
     assert.equal(world.brick.length, 24 )
   })
 
-  it('bricks should have a hit value of false', () =>{
+  it('should have a hit value of false to start', () =>{
     for (let i= 0; i<world.brick.length;i++) {
       assert.equal(world.brick[i].hit, false)
     }
+  })
+
+  it('should have their bricks change their hit value to true on contact with ball', ()=>{
+    assert.equal(world.brick[21].hit, false)
+    world.ball.x= 315
+    world.ball.y =20
+    world.brickHitMid();
+    assert.equal(world.brick[21].hit, true)
   })
 
 })
