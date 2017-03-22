@@ -101,11 +101,4 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
 
   })
 
-  it("it should launch off the paddle when hitting enter", ()=>{
-    assert.equal(world.ball.xx, 0)
-    assert.equal(world.ball.yy, 0)
-
-
-  })
-
 })
