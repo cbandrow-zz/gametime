@@ -77,7 +77,7 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
     assert.equal(world.ball.xx, 3);
     world.score = 60
     world.increaseSpeed();
-    assert.equal(world.ball.xx, 3.24)
+    assert.equal(world.ball.xx, 3.18)
   })
 
   it("it should reset speed if new level state occurs", ()=>{

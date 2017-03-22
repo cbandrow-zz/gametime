@@ -1,16 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700|Play:400,700');
+
+*{
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+}
+
+
+h1{
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+}
 
 body{
-  background-color:lightgrey;
+  background-color: #010101;
   background-image: url('images/Defy_Gravity_Background_Space_4.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+
 }
 
 .game-title{
-  font-weight: 100;
   text-align: center;
   color:#fff;
-  font-family: fantasy;
 }
 
 #game{
@@ -23,16 +34,15 @@ body{
 .game-menu{
   display: flex;
   margin: 25px auto;
-  width: 340px;
+  width: 400px;
   justify-content: space-between;
   font-weight: bold;
-  font-family: fantasy;
   color:#fff
 }
 
 #play-btn{
-  border-radius:20%;
-  outline:none;
+  border-radius: 20%;
+  outline: none;
   background-color: purple;
   color: white;
 }
