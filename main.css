@@ -34,9 +34,10 @@ body{
 .game-menu{
   display: flex;
   margin: 25px auto;
-  width: 400px;
+  width: 50%;
   justify-content: space-between;
   font-weight: bold;
+  font-size: 16px;
   color:#fff
 }
 
