@@ -101,4 +101,14 @@ describe('Ball should behave and cooperate with the rest of the world.', () => {
 
   })
 
+  it("it should move",()=>{
+    assert.equal(world.ball.x,140)
+    assert.equal(world.ball.y,445)
+    world.ball.dx= 3
+    world.ball.dy= 3
+    world.ball.move()
+    assert.equal(world.ball.x,143)
+    assert.equal(world.ball.y,448)
+  })
+
 })
